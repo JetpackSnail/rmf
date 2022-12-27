@@ -65,8 +65,8 @@ RUN . /opt/ros/$ROS_DISTRO/setup.sh \
 # COPY --from=builder /root/rmf/install /opt/rmf
 
 # cleanup
-RUN rm -rf build devel src \
-  && sed -i '$isource "/rmf_demos_ws/install/setup.bash"' /ros_entrypoint.sh
+# RUN rm -rf build devel src \
+RUN sed -i '$isource "/rmf_demos_ws/install/setup.bash"' /ros_entrypoint.sh
 
 ENTRYPOINT ["/ros_entrypoint.sh"]
 CMD ["bash"]
